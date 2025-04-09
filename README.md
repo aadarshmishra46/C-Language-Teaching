@@ -257,3 +257,182 @@ int main() {
 ---
 
 Would you like me to create a **colorful Day 1 PDF worksheet** (with code boxes and space for writing answers)? Or should we move to **Day 2**?
+
+Perfect! Let's move to **Day 2** with the same deep, beginner-friendly approach. The goal for today is to build on what we learned and introduce the idea of **variables, data types, and `scanf()` for input** — all with clear analogies, visuals, and hands-on practice.
+
+---
+
+# 👩‍🏫 **Day 2 – Variables, Data Types & Taking Input in C**
+
+---
+
+## 🎯 **Goal**:  
+Understand how to store and use data (like numbers and names) in a C program using **variables**, and how to take input from the user using `scanf()`.
+
+---
+
+## 🧠 **SECTION 1: What is a Variable?**
+
+### 🔍 Definition:
+A **variable** is like a **container** or **box** in memory where we can **store values** — like numbers, characters, etc.
+
+### 📦 Real-Life Analogy:
+Imagine you have boxes with **labels** like `age`, `height`, or `marks`.
+
+| Label | Content |
+|-------|---------|
+| age   | 20      |
+| name  | "Aadarsh" |
+| marks | 87.5    |
+
+In C, you create these boxes using **variable declarations**.
+
+---
+
+## 💡 **SECTION 2: Data Types in C**
+
+### 🧬 Why do we need data types?
+Because **different kinds of data** (numbers, letters, decimal values) need **different kinds of memory boxes**.
+
+### 📋 Common Data Types:
+
+| Type   | Use                        | Example      | Format Specifier |
+|--------|----------------------------|--------------|------------------|
+| `int`  | Whole numbers              | 5, -10, 200  | `%d`              |
+| `float`| Decimal numbers (6 digits) | 3.14, -5.5   | `%f`              |
+| `char` | Single character           | 'A', 'z'     | `%c`              |
+| `double`| Larger decimal numbers    | 5.234523     | `%lf`             |
+
+---
+
+## 🔧 **SECTION 3: Declaring & Using Variables**
+
+### 🧪 Syntax:
+```c
+int age;
+age = 20;
+```
+
+Or do both at once:
+
+```c
+int age = 20;
+```
+
+### 🧑‍🍳 Example:
+```c
+#include <stdio.h>
+
+int main() {
+    int age = 18;
+    float height = 5.9;
+    char grade = 'A';
+
+    printf("Age: %d\n", age);
+    printf("Height: %.1f\n", height);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
+```
+
+---
+
+## ⌨️ **SECTION 4: Taking Input from the User – `scanf()`**
+
+### 🗣️ Why `scanf()`?
+Because sometimes, we want to **ask the user** for data instead of hardcoding it.
+
+### 📥 Syntax:
+```c
+scanf("format", &variable);
+```
+> ⚠️ Note the **ampersand (&)** — it tells the program *where* to store the input.
+
+---
+
+### 🧑‍🎓 Example:
+```c
+#include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("You are %d years old.\n", age);
+    return 0;
+}
+```
+
+---
+
+## 💻 **SECTION 5: Full Practice Program**
+
+```c
+#include <stdio.h>
+
+int main() {
+    int roll;
+    float marks;
+    char grade;
+
+    printf("Enter your roll number: ");
+    scanf("%d", &roll);
+
+    printf("Enter your marks: ");
+    scanf("%f", &marks);
+
+    printf("Enter your grade: ");
+    scanf(" %c", &grade); // Note the space before %c
+
+    printf("\n--- Student Details ---\n");
+    printf("Roll Number: %d\n", roll);
+    printf("Marks: %.2f\n", marks);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
+```
+
+> 🧠 Why is there a **space before `%c`**?  
+To avoid a leftover newline (`\n`) from `scanf` interfering with character input.
+
+---
+
+## ❌ Common Beginner Mistakes
+
+| Mistake | Explanation |
+|--------|-------------|
+| Using `%f` for `int` or vice-versa | Format specifiers must match data types |
+| Forgetting `&` in `scanf()` | Program won’t know where to store input |
+| Using `' '` around variable names | Quotes are only for characters, not variable names |
+
+---
+
+## ✏️ Homework / Practice
+
+1. Write a program that:
+   - Takes your name (as a character array — `char name[20];`)
+   - Takes your age and marks
+   - Prints them out in a nice format
+
+2. Try taking inputs for:
+   - Temperature of your city
+   - Price of an item
+   - First letter of your name
+
+---
+
+## ✅ **Day 2 Summary**
+
+| Concept | Learned |
+|--------|---------|
+| What is a variable | ✔️ |
+| Common data types in C | ✔️ |
+| How to store values using variables | ✔️ |
+| How to take user input using `scanf()` | ✔️ |
+| How to use `printf()` with variables | ✔️ |
+
+---
+
+Would you like a **Day 2 PDF worksheet** with exercises and diagrams (like memory box visuals)? Or should I help you with **Day 3** next?
