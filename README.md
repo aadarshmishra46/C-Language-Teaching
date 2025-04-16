@@ -436,3 +436,422 @@ To avoid a leftover newline (`\n`) from `scanf` interfering with character input
 ---
 
 Would you like a **Day 2 PDF worksheet** with exercises and diagrams (like memory box visuals)? Or should I help you with **Day 3** next?
+
+Awesome! Let’s begin **Day 3** of the C programming journey. By now, your student has learned how to use `printf()` for output, `scanf()` for input, and variables of different types. Today, we level up by introducing **operators and expressions** — the **tools to compute and compare**.
+
+---
+
+# 👩‍🏫 **Day 3 – Operators & Expressions in C**
+
+---
+
+## 🎯 **Goal**:  
+Understand how to **perform calculations**, **compare values**, and **write meaningful expressions** using **operators**.
+
+---
+
+## 🧠 **SECTION 1: What Are Operators?**
+
+Operators are **symbols** that tell the computer to do something with values or variables.
+
+Just like math:
+- `+` means add
+- `-` means subtract
+- `*` means multiply
+- `/` means divide
+
+But in programming, we have **more types**.
+
+---
+
+## 🧮 **SECTION 2: Arithmetic Operators**
+
+| Operator | Description       | Example (`a = 10`, `b = 3`) | Result |
+|----------|-------------------|------------------------------|--------|
+| `+`      | Addition           | `a + b`                      | 13     |
+| `-`      | Subtraction        | `a - b`                      | 7      |
+| `*`      | Multiplication     | `a * b`                      | 30     |
+| `/`      | Division           | `a / b`                      | 3      |
+| `%`      | Modulus (Remainder)| `a % b`                      | 1      |
+
+> ❗ Note: `/` for integers will **remove decimals**.  
+Example: `5 / 2 = 2` (not 2.5)
+
+---
+
+### 🧪 Example Program:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 15, b = 4;
+
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);  // Integer division
+    printf("a %% b = %d\n", a % b); // %% to print %
+
+    return 0;
+}
+```
+
+> ✅ `%%` is how we print `%` using `printf()`!
+
+---
+
+## 🔍 **SECTION 3: Relational (Comparison) Operators**
+
+Used to **compare** two values. Result is always **true (1)** or **false (0)**.
+
+| Operator | Meaning         | Example (`a = 5`, `b = 7`) | Result |
+|----------|------------------|----------------------------|--------|
+| `==`     | Equal to         | `a == b`                   | 0      |
+| `!=`     | Not equal to     | `a != b`                   | 1      |
+| `>`      | Greater than     | `a > b`                    | 0      |
+| `<`      | Less than        | `a < b`                    | 1      |
+| `>=`     | Greater or equal | `a >= b`                   | 0      |
+| `<=`     | Less or equal    | `a <= b`                   | 1      |
+
+---
+
+### 🧪 Comparison Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int x = 10, y = 20;
+
+    printf("x == y: %d\n", x == y);
+    printf("x != y: %d\n", x != y);
+    printf("x > y : %d\n", x > y);
+    printf("x < y : %d\n", x < y);
+
+    return 0;
+}
+```
+
+> 🧠 It prints `1` for **true**, `0` for **false**
+
+---
+
+## 🔄 **SECTION 4: Assignment Operators**
+
+| Operator | Meaning            | Example       | Same as      |
+|----------|--------------------|---------------|--------------|
+| `=`      | Assign              | `a = 5`       | —            |
+| `+=`     | Add & assign        | `a += 3`      | `a = a + 3`  |
+| `-=`     | Subtract & assign   | `a -= 2`      | `a = a - 2`  |
+| `*=`     | Multiply & assign   | `a *= 2`      | `a = a * 2`  |
+| `/=`     | Divide & assign     | `a /= 2`      | `a = a / 2`  |
+| `%=`     | Modulus & assign    | `a %= 2`      | `a = a % 2`  |
+
+---
+
+## 🤹‍♂️ **SECTION 5: Increment & Decrement**
+
+| Operator | Meaning            | Example |
+|----------|--------------------|---------|
+| `++`     | Increase by 1      | `a++`   |
+| `--`     | Decrease by 1      | `b--`   |
+
+🔸 Can be written as:
+- `++a` → Pre-increment
+- `a++` → Post-increment
+
+(We’ll explore this more when loops are introduced.)
+
+---
+
+## 🧩 **SECTION 6: Expressions**
+
+An **expression** is a combination of variables, values, and operators that gives a **result**.
+
+### ✨ Example:
+```c
+int a = 5, b = 3;
+int result = (a + b) * 2; // result = 16
+```
+
+---
+
+## 💻 **SECTION 7: Practice Program – Calculator**
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Sum = %d\n", a + b);
+    printf("Difference = %d\n", a - b);
+    printf("Product = %d\n", a * b);
+    printf("Quotient = %d\n", a / b);
+    printf("Remainder = %d\n", a % b);
+
+    return 0;
+}
+```
+
+---
+
+## 📝 Homework / Practice
+
+1. Write a program to input your **math and science marks** and print:
+   - Total marks
+   - Average marks
+
+2. Write a program to input **age** of two people and compare:
+   - Who is older?
+   - Are they of the same age?
+
+3. Predict the output (and then run) this:
+```c
+int x = 4, y = 2;
+x += y * 3;
+printf("%d", x);
+```
+
+---
+
+## ✅ **Day 3 Summary**
+
+| Concept        | Learned |
+|----------------|---------|
+| Arithmetic operators | ✔️ |
+| Relational operators | ✔️ |
+| Assignment operators | ✔️ |
+| Increment/Decrement | ✔️ |
+| Expressions | ✔️ |
+| Practice using `scanf()` and `printf()` with operators | ✔️ |
+
+---
+
+Would you like a **printable worksheet** or **quiz** for Day 3? Or shall we dive into **Day 4 – Conditional Statements (`if`, `else`, `switch`)**?
+
+Great! Let's dive into **Day 4**, which is all about **decision-making in C** using **`if`, `else`, and `switch` statements** — a super important topic for writing programs that **think and choose** based on certain conditions.
+
+---
+
+# 👩‍🏫 **Day 4 – Conditional Statements in C (`if`, `else`, `switch`)**
+
+---
+
+## 🎯 **Goal**:  
+Learn how to make your program **make decisions** using `if`, `else if`, `else`, and `switch` statements.
+
+---
+
+## 🧠 **SECTION 1: Why Do We Need Conditions in Programming?**
+
+In real life:
+> If it’s raining, take an umbrella.  
+> Else, wear sunglasses.
+
+In programming:
+> If a number is greater than 10, print “Big”.  
+> Else, print “Small”.
+
+We use **conditional statements** for such decisions.
+
+---
+
+## 🧪 **SECTION 2: The `if` Statement**
+
+### 🔸 Syntax:
+```c
+if (condition) {
+    // code to run if condition is true
+}
+```
+
+### 🧑‍🎓 Example:
+```c
+int age = 18;
+if (age >= 18) {
+    printf("You are eligible to vote.\n");
+}
+```
+
+---
+
+## 🔄 **SECTION 3: `if...else` Statement**
+
+### 🔸 Syntax:
+```c
+if (condition) {
+    // if true
+} else {
+    // if false
+}
+```
+
+### 🧑‍🎓 Example:
+```c
+int age = 15;
+if (age >= 18) {
+    printf("You can vote.\n");
+} else {
+    printf("You are too young to vote.\n");
+}
+```
+
+---
+
+## 🔁 **SECTION 4: `if...else if...else` Ladder**
+
+Used for **multiple choices**.
+
+### 🔸 Syntax:
+```c
+if (condition1) {
+    // if condition1 is true
+} else if (condition2) {
+    // if condition2 is true
+} else {
+    // if none are true
+}
+```
+
+### 🧑‍🎓 Example:
+```c
+int marks = 75;
+
+if (marks >= 90) {
+    printf("Grade: A\n");
+} else if (marks >= 75) {
+    printf("Grade: B\n");
+} else if (marks >= 60) {
+    printf("Grade: C\n");
+} else {
+    printf("Grade: D\n");
+}
+```
+
+---
+
+## 💡 **NOTE: How Conditions Work**
+
+| Operator | Meaning |
+|----------|---------|
+| `==`     | Equal to |
+| `!=`     | Not equal |
+| `>`      | Greater than |
+| `<`      | Less than |
+| `>=`     | Greater or equal |
+| `<=`     | Less or equal |
+
+These always return either `true (1)` or `false (0)`.
+
+---
+
+## 🔀 **SECTION 5: The `switch` Statement**
+
+Use `switch` when you have **multiple fixed values** to choose from.
+
+### 🔸 Syntax:
+```c
+switch (expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code
+}
+```
+
+> 🔔 Use `break` to **stop** after a case is executed.
+
+---
+
+### 🧑‍🎓 Example: Menu-Based Program
+
+```c
+int choice;
+printf("1. English\n2. Hindi\n3. Kannada\n");
+printf("Choose a language (1-3): ");
+scanf("%d", &choice);
+
+switch (choice) {
+    case 1:
+        printf("You chose English.\n");
+        break;
+    case 2:
+        printf("You chose Hindi.\n");
+        break;
+    case 3:
+        printf("You chose Kannada.\n");
+        break;
+    default:
+        printf("Invalid choice.\n");
+}
+```
+
+---
+
+## ❗ Common Mistakes
+
+| Mistake | Why it's wrong |
+|--------|----------------|
+| Using `=` instead of `==` | `=` is assignment, `==` is comparison |
+| Forgetting `{}` | May cause wrong block to run |
+| Missing `break` in `switch` | Causes fall-through (next case runs too) |
+| Putting conditions inside `switch` | `switch` works only with **fixed values**, not conditions |
+
+---
+
+## 📝 Homework / Practice
+
+1. **Voting App**
+   - Input age
+   - If age >= 18 → Print eligible
+   - Else → Print not eligible
+
+2. **Grading System**
+   - Input marks
+   - Print grade using `if...else if`
+
+3. **Simple Calculator using switch**
+   - Input two numbers and an operator (`+`, `-`, `*`, `/`)
+   - Use `switch` to perform the correct operation
+
+---
+
+## 🧠 Challenge Program:
+
+```c
+// Input temperature and decide what to wear
+int temp;
+scanf("%d", &temp);
+
+if (temp >= 30) {
+    printf("It's hot! Wear light clothes.\n");
+} else if (temp >= 20) {
+    printf("Nice weather. Wear whatever you like.\n");
+} else {
+    printf("It's cold! Wear a jacket.\n");
+}
+```
+
+---
+
+## ✅ **Day 4 Summary**
+
+| Concept | Learned |
+|--------|---------|
+| `if` statement | ✔️ |
+| `if...else` | ✔️ |
+| `else if` ladder | ✔️ |
+| `switch` statement | ✔️ |
+| Menu-based programs | ✔️ |
+
+---
+
+Would you like a **Day 4 assignment sheet** with space for writing answers and practice problems? Or should we jump into **Day 5 – Loops (while, for, do-while)**?
