@@ -855,3 +855,568 @@ if (temp >= 30) {
 ---
 
 Would you like a **Day 4 assignment sheet** with space for writing answers and practice problems? Or should we jump into **Day 5 – Loops (while, for, do-while)**?
+
+Excellent! Let's continue with **Day 5** — this is a **very important day** because today your student will learn **Loops** — the **power** to **repeat** tasks without writing the same code again and again!
+
+---
+
+# 👩‍🏫 **Day 5 – Loops in C (while, for, do-while)**
+
+---
+
+## 🎯 **Goal**:  
+Learn how to **repeat** code multiple times using **loops**:
+- `while`
+- `for`
+- `do-while`
+
+---
+
+# 🧠 **SECTION 1: What are Loops?**
+
+🔹 Sometimes we need to do something **again and again**.
+
+Example:  
+- Print numbers from 1 to 10.
+- Add 5 numbers entered by user.
+- Repeat "Hello" 5 times.
+
+👉 Instead of writing code again and again, we use a **loop**.
+
+---
+
+# 🔄 **SECTION 2: Types of Loops in C**
+
+| Type of Loop | When to Use |
+|--------------|-------------|
+| `while`      | Repeat until a condition is true |
+| `for`        | Repeat when you **know** how many times |
+| `do-while`   | **At least once** execution, then check condition |
+
+---
+
+# 🧪 **SECTION 3: `while` Loop**
+
+### 🔸 Syntax:
+```c
+while (condition) {
+    // code to repeat
+}
+```
+
+- First checks the condition.
+- If **true**, runs the block.
+- If **false**, stops.
+
+---
+
+### 🧑‍🎓 Example 1: Print numbers 1 to 5
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        printf("%d\n", i);
+        i++;
+    }
+    return 0;
+}
+```
+
+### 🛑 Important:
+- Always **update** (`i++`) inside the loop.
+- Otherwise, loop will **never end** (infinite loop).
+
+---
+
+# 🔥 **SECTION 4: `for` Loop**
+
+### 🔸 Syntax:
+```c
+for (initialization; condition; update) {
+    // code to repeat
+}
+```
+
+It has **all 3 parts** in one line!
+
+---
+
+### 🧑‍🎓 Example 2: Print numbers 1 to 5
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+
+**Meaning:**  
+- Start from 1
+- Print
+- Increase by 1
+- Stop when `i > 5`
+
+---
+
+# ➡️ **SECTION 5: `do-while` Loop**
+
+- Runs **at least once**, even if condition is **false**!
+
+### 🔸 Syntax:
+```c
+do {
+    // code to repeat
+} while (condition);
+```
+
+**Notice:** Semicolon `;` after `while(condition)`.
+
+---
+
+### 🧑‍🎓 Example 3: Print numbers 1 to 5
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+    do {
+        printf("%d\n", i);
+        i++;
+    } while (i <= 5);
+
+    return 0;
+}
+```
+
+---
+
+# ⚡ **SECTION 6: Differences Between Loops**
+
+| Loop Type  | Condition Checking | Minimum Execution |
+|------------|--------------------|-------------------|
+| `while`    | Before the loop     | 0 times possible  |
+| `for`      | Before the loop     | 0 times possible  |
+| `do-while` | After the loop      | At least 1 time   |
+
+---
+
+# 🛠️ **SECTION 7: Real Programs**
+
+### 📄 Program 1: Print 1 to N (User Input)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+```
+
+---
+
+### 📄 Program 2: Sum of first N natural numbers
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    int i = 1;
+    while (i <= n) {
+        sum = sum + i;
+        i++;
+    }
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
+```
+
+---
+
+### 📄 Program 3: Menu Driven Program (Do-While Example)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int choice;
+
+    do {
+        printf("1. Say Hello\n2. Say Bye\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Hello!\n");
+                break;
+            case 2:
+                printf("Bye!\n");
+                break;
+            case 3:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice.\n");
+        }
+    } while (choice != 3);
+
+    return 0;
+}
+```
+
+---
+
+# 🔥 **SECTION 8: Important Points for Loops**
+
+| Point | Tip |
+|-------|-----|
+| Initialization | Start the variable |
+| Condition | Must eventually become false |
+| Update | Always modify inside the loop |
+| Infinite loop | Happens when update is missing |
+| Braces `{}` | Optional for 1 statement but better to use |
+
+---
+
+# 📝 Homework / Practice
+
+1. Print all even numbers from 1 to 20.
+2. Print multiplication table of any number (like 5 × 1 = 5, 5 × 2 = 10, etc.)
+3. Find the factorial of a number (e.g., 5! = 5×4×3×2×1).
+4. Write a program using `do-while` that keeps asking for a password until the correct password is entered.
+5. Write a program that sums all odd numbers between 1 and 50.
+
+---
+
+# ✅ **Day 5 Summary**
+
+| Concept | Learned |
+|---------|---------|
+| `while` loop | ✔️ |
+| `for` loop | ✔️ |
+| `do-while` loop | ✔️ |
+| Infinite loops and how to avoid them | ✔️ |
+| Practical programs using loops | ✔️ |
+
+---
+
+Would you also like me to create a **Loop Practice Worksheet** (with 10+ small loop exercises) for Day 5?  
+Or should we continue to **Day 6 — Patterns with Loops (Triangles, Squares, etc.)**? 🚀
+
+Awesome, let's move into **Day 6** — this will be a **very interesting and creative** day for your student!
+
+Today is about **using loops to print patterns** like triangles, squares, and pyramids in C.  
+(Students love this because they can **see** their code working beautifully!)
+
+---
+
+# 👩‍🏫 **Day 6 – Printing Patterns in C (Using Loops)**
+
+---
+
+## 🎯 **Goal**:  
+Learn how to **use nested loops** to draw **patterns** like:
+- Squares
+- Triangles
+- Pyramids
+- Inverted shapes
+
+---
+
+# 🧠 **SECTION 1: What are Patterns?**
+
+A **pattern** is a special output format created by **printing stars (`*`) or numbers** in a specific **shape**.
+
+👉 **Example**: Print `*` in triangle form
+```
+*
+**
+***
+****
+*****
+```
+
+---
+
+# 🔄 **SECTION 2: Nested Loops**
+
+To create patterns, we usually need **nested loops**:
+- **Outer loop** → controls **rows**.
+- **Inner loop** → controls **columns** or **what to print**.
+
+---
+
+### 📚 General Structure of Nested Loops:
+```c
+for (int i = 1; i <= rows; i++) {   // outer loop for rows
+    for (int j = 1; j <= i; j++) {   // inner loop for stars
+        printf("*");
+    }
+    printf("\n"); // Move to next line
+}
+```
+
+---
+
+# 🛠️ **SECTION 3: Basic Patterns Examples**
+
+---
+
+### 📄 Example 1: Square of `*`
+
+**Pattern:**
+```
+* * * *
+* * * *
+* * * *
+* * * *
+```
+
+### 🔸 Code:
+```c
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+
+    for (int i = 1; i <= n; i++) {         // Rows
+        for (int j = 1; j <= n; j++) {     // Columns
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+### 📄 Example 2: Right-Angled Triangle
+
+**Pattern:**
+```
+*
+* *
+* * *
+* * * *
+```
+
+### 🔸 Code:
+```c
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+# ➡️ **SECTION 4: Number Patterns**
+
+---
+
+### 📄 Example 3: Numbers instead of Stars
+
+**Pattern:**
+```
+1
+1 2
+1 2 3
+1 2 3 4
+```
+
+### 🔸 Code:
+```c
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+# 🔄 **SECTION 5: Advanced Patterns**
+
+---
+
+### 📄 Example 4: Inverted Triangle
+
+**Pattern:**
+```
+* * * *
+* * *
+* *
+*
+```
+
+### 🔸 Code:
+```c
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+### 📄 Example 5: Pyramid (Centered Triangle)
+
+**Pattern:**
+```
+      * 
+    * * * 
+  * * * * * 
+* * * * * * *
+```
+
+### 🔸 Code:
+```c
+#include <stdio.h>
+
+int main() {
+    int n = 4;
+
+    for (int i = 1; i <= n; i++) {
+        // Print spaces
+        for (int space = 1; space <= (n - i); space++) {
+            printf("  ");
+        }
+        // Print stars
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+# 📋 **SECTION 6: Important Tips for Patterns**
+
+| Tip | Why |
+|-----|-----|
+| Inner loop controls columns | To print multiple symbols per row |
+| Outer loop controls rows | To print multiple rows |
+| `printf("\n");` after inner loop | To move to next line |
+| Pyramid patterns require spaces | To center the shape |
+| Decrease or increase stars carefully | For correct shapes |
+
+---
+
+# 📝 Homework / Practice
+
+👉 Ask the student to code these patterns:
+
+1. **Half Pyramid with Numbers**
+```
+1
+2 3
+4 5 6
+7 8 9 10
+```
+
+2. **Full Pyramid with `*`**
+```
+      *
+     ***
+    *****
+   *******
+```
+
+3. **Inverted Number Triangle**
+```
+1 2 3 4
+1 2 3
+1 2
+1
+```
+
+4. **Diamond Pattern**
+```
+    *
+   * *
+  * * *
+ * * * *
+  * * *
+   * *
+    *
+```
+
+5. **Square Border**
+```
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+```
+
+---
+
+# ✅ **Day 6 Summary**
+
+| Concept | Learned |
+|---------|---------|
+| Nested loops | ✔️ |
+| Printing stars and numbers | ✔️ |
+| Pyramid, Triangle, Inverted patterns | ✔️ |
+| Importance of spacing | ✔️ |
+| Creative thinking with loops | ✔️ |
+
+---
+
+Would you also like me to prepare a **Day 6 Special Practice Sheet** with "15 pattern problems" (easy, medium, hard categorized)?  
+Or should we move to **Day 7 – Introduction to Functions in C**? 🚀
