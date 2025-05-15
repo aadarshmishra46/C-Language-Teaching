@@ -1420,3 +1420,294 @@ int main() {
 
 Would you also like me to prepare a **Day 6 Special Practice Sheet** with "15 pattern problems" (easy, medium, hard categorized)?  
 Or should we move to **Day 7 – Introduction to Functions in C**? 🚀
+
+Absolutely! Here's a detailed breakdown for **Day 7, Day 8, and Day 9** designed for a **first-year B.Tech student who is completely new to programming**.
+
+---
+
+# 🗓️ **Day 7 – Introduction to Functions in C**
+
+---
+
+### 🎯 **Goal**:
+
+Understand what functions are, why they are useful, and how to declare, define, and call them in a C program.
+
+---
+
+## 🧠 SECTION 1: What is a Function?
+
+A **function** is a **block of code** that does a specific task.
+It helps in:
+
+* Avoiding repetition
+* Making code modular
+* Better readability and debugging
+
+---
+
+## 📌 Example Analogy:
+
+> Think of a function like a “machine” that you can give inputs to, and it gives output.
+> For example: a `washingMachine()` — you give clothes, it gives back clean clothes.
+
+---
+
+## 🧩 SECTION 2: Basic Structure of a Function
+
+```c
+return_type function_name(parameters) {
+    // code
+    return value;
+}
+```
+
+---
+
+## 📄 Example: A simple function that prints Hello
+
+```c
+#include <stdio.h>
+
+void sayHello() {
+    printf("Hello!\n");
+}
+
+int main() {
+    sayHello();  // Function call
+    return 0;
+}
+```
+
+🧠 Here:
+
+* `void` = function returns nothing.
+* `sayHello()` = function name.
+* `main()` is also a function — it's the starting point of the program.
+
+---
+
+## ✍️ Practice Tasks:
+
+1. Write a function to print "Welcome to C Programming!"
+2. Write a function to print your name 5 times using a loop inside the function.
+
+---
+
+## ✅ Summary:
+
+* What is a function? ✔️
+* Function declaration, definition, and calling ✔️
+* Using `void` function ✔️
+* Function makes code clean and reusable ✔️
+
+---
+
+# 🗓️ **Day 8 – Types of Functions in C**
+
+---
+
+### 🎯 **Goal**:
+
+Understand the **4 types of functions** based on **parameters** and **return values**.
+
+---
+
+## 📚 SECTION 1: Function Types
+
+| Type                        | Parameters | Return |
+| --------------------------- | ---------- | ------ |
+| 1. No Parameters, No Return | ❌          | ❌      |
+| 2. Parameters, No Return    | ✅          | ❌      |
+| 3. No Parameters, Return    | ❌          | ✅      |
+| 4. Parameters, Return       | ✅          | ✅      |
+
+---
+
+## 🧪 Examples for Each Type:
+
+### 🔸 Type 1: No Parameters, No Return
+
+```c
+void greet() {
+    printf("Good Morning!\n");
+}
+
+int main() {
+    greet();
+    return 0;
+}
+```
+
+---
+
+### 🔸 Type 2: Parameters, No Return
+
+```c
+void printSum(int a, int b) {
+    printf("Sum is %d\n", a + b);
+}
+
+int main() {
+    printSum(3, 5);
+    return 0;
+}
+```
+
+---
+
+### 🔸 Type 3: No Parameters, Return Value
+
+```c
+int getFive() {
+    return 5;
+}
+
+int main() {
+    int x = getFive();
+    printf("Value is %d\n", x);
+    return 0;
+}
+```
+
+---
+
+### 🔸 Type 4: Parameters and Return Value
+
+```c
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(10, 20);
+    printf("Result: %d\n", result);
+    return 0;
+}
+```
+
+---
+
+## ✍️ Practice Tasks:
+
+1. Create a function to return the square of a number.
+2. Create a function to check whether a number is even or odd.
+3. Create a function to calculate the factorial of a number using parameters and return.
+
+---
+
+## ✅ Summary:
+
+* Learned all 4 function types ✔️
+* Practiced passing arguments and returning values ✔️
+* Functions can be reused with different inputs ✔️
+
+---
+
+# 🗓️ **Day 9 – Scope of Variables + Recursion Basics**
+
+---
+
+### 🎯 **Goal**:
+
+* Understand **variable scope**: local, global, and static.
+* Learn the basics of **recursion** (function calling itself).
+
+---
+
+## 🌐 SECTION 1: Scope of Variables
+
+### 🔸 Local Variable:
+
+Declared **inside a function** — used **only in that function**.
+
+```c
+void display() {
+    int x = 10; // Local
+    printf("%d\n", x);
+}
+```
+
+---
+
+### 🔸 Global Variable:
+
+Declared **outside any function** — accessible by **all functions**.
+
+```c
+int x = 100; // Global
+
+void show() {
+    printf("x = %d\n", x);
+}
+```
+
+---
+
+### 🔸 Static Variable:
+
+Keeps its value even after the function ends.
+
+```c
+void counter() {
+    static int count = 0;
+    count++;
+    printf("%d\n", count);
+}
+```
+
+---
+
+## 🔁 SECTION 2: Introduction to Recursion
+
+Recursion = A function calling **itself**.
+
+Used when:
+
+* Problem can be broken into smaller versions of itself
+* Example: factorial, Fibonacci, etc.
+
+---
+
+## 📄 Example: Factorial Using Recursion
+
+```c
+int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int f = factorial(5);
+    printf("Factorial is %d\n", f);
+    return 0;
+}
+```
+
+---
+
+## 🧠 Key Points:
+
+* Every recursion must have a **base condition** to stop
+* Otherwise, it will cause **infinite loop**
+
+---
+
+## ✍️ Practice Tasks:
+
+1. Write a recursive function to print numbers from 1 to N.
+2. Write a function to find sum of digits of a number using recursion.
+3. Explain and compare a normal loop vs recursive version of factorial.
+
+---
+
+## ✅ Summary:
+
+* Learned **variable scopes**: local, global, static ✔️
+* Understood basic **recursion** ✔️
+* Wrote **recursive functions** with base cases ✔️
+
+---
+
+Would you like a **printable PDF version** of these 3 days or a **quiz worksheet** for review before moving to Day 10 (Arrays – Intro)?
+
